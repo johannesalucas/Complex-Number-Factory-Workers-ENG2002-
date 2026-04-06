@@ -1,4 +1,4 @@
-#fixnum_pkgFull.py
+#fixpoint_pkgFull.py
 import math
 class fixNum:
     def __init__(self, a,b):
