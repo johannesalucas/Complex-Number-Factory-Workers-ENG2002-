@@ -26,8 +26,8 @@ def main_menu():
 
             num1=fixNum(a1,int(b1),p1)
             num2=fixNum(a2,int(b2),p2)
-
-            result=num1.add(num2)
+#Implemented built-in dunder methods for the operations, so we can just use the operators instead of calling the methods directly.
+            result=num1+num2
             print(f"{num1}+{num2}={result}")
             
         elif choice=='2': #Subtraction
@@ -45,7 +45,7 @@ def main_menu():
             num1=fixNum(a1,int(b1),p1)
             num2=fixNum(a2,int(b2),p2)
 
-            result=num1.subtract(num2)
+            result=num1-num2
             print(f"{num1}-{num2}={result}")
         
         elif choice == '3': #Multiplication
@@ -63,7 +63,7 @@ def main_menu():
             num1=fixNum(a1,int(b1),p1)
             num2=fixNum(a2,int(b2),p2)
             
-            result = num1.multiply(num2)
+            result = num1*num2
             print(f"\nResult: {num1} * {num2} = {result}")
             
         elif choice == '4': #Division
@@ -79,7 +79,7 @@ def main_menu():
 
             num1=fixNum(a1,int(b1),p1)
             num2=fixNum(a2,int(b2),p2)
-            result = num1.divide(num2)
+            result = num1/num2
             print(f"\nResult: {num1} ÷ {num2} = {result}")
             
         elif choice == '5':
