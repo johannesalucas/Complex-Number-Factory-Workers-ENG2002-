@@ -21,8 +21,8 @@ class fixNum:
         ''' (round..., 7) acts as a safety net to clean tiny binary errors at the 7th decimal place(safe choice)'''
         b=int(math.floor(round((value-a)*(10**precision),7)))
         return fixNum(a,b,precision)
-
-    def add(self,other): #Task 0, taking an extra step:
+#Using dunder methods
+    def __add__(self,other): #Task 0, taking an extra step:
         val1=self.to_float()
         val2=other.to_float()
 
@@ -30,12 +30,12 @@ class fixNum:
 
         return fixNum.from_float(result,self.precision)
         
-    def subtract(self,other): #Task 1
+    def __sub__(self,other): #Task 1
         dif_val=self.to_float()-other.to_float()
 
         return fixNum.from_float(dif_val,self.precision)
         
-    def multiply(self,other): #Task 2(Our task)
+    def __mul__(self,other): #Task 2(Our task)
         #Performs the multiplication task, converts both to floats to perform the math
         val1=self.to_float()
         val2=other.to_float()
@@ -45,7 +45,7 @@ class fixNum:
         
         return fixNum.from_float(raw_result,self.precision)
         
-    def divide(self,other): #Task 3
+    def __truediv__(self,other): #Task 3
         val1=self.to_float()
         val2=other.to_float()
         #To account for division by 0 and not do the work:
@@ -55,7 +55,7 @@ class fixNum:
             
         raw_result=val1/val2
         return fixNum.from_float(raw_result,self.precision)
-        
+       #Did not use dunder methods here to create a manual comparison of function calling vs operator use. 
     def compare(self,other): #Task 4
         val1=self.to_float()
         val2=other.to_float()
